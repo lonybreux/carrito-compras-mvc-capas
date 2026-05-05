@@ -8,3 +8,12 @@
 
 ## Stack
 - **LAMP** (Linux, Apache, MySQL, PHP)
+    - Linux -> Ubuntu Server en Azure
+    - Apache -> Servidor web
+    - MySQL -> Base de datos
+    - PHP -> Lenguaje Backend
+
+## Instalación
+1. Clonar repositorio
+2. Copiar config/env.example.php a config/env.php
+3. Agregar credenciales de la BD a env.php
