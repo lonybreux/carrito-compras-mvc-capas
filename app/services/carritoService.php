@@ -1,0 +1,61 @@
+<?php
+require_once __DIR__ . '/../repositories/carritoRepository.php';
+require_once __DIR__ . '/../repositories/detalleCarritoRepository.php';
+require_once __DIR__ . '/../repositories/productoRepository.php';
+require_once __DIR__ . '/../services/inventarioService.php';
+
+class CarritoService {
+    private $carritoRepository;
+    private $detalleCarritoRepository;
+    private $productoRepository;
+    private $inventarioService;
+
+    public function __construct($conn) {
+        $this->carritoRepository = new CarritoRepository($conn);
+        $this->detalleCarritoRepository = new DetalleCarritoRepository($conn);
+        $this->productoRepository = new ProductoRepository($conn);
+        $this->inventarioService = new InventarioService($conn);
+    }
+
+    public function obtenerGuardarCarrito(int $id_cliente) {
+        $carrito = $this->carritoRepository->findByIdCliente($id_cliente);
+
+        if($carrito === NULL) {
+            $carrito = new Carrito(0,$id_cliente);
+            $this->carritoRepository->save($carrito);
+            $carrito = $this->carritoRepository->findByIdCliente($id_cliente);
+        }
+
+        return $carrito;
+    }
+
+    public function agregarProducto(int $id_cliente,int $id_producto, int $cantidad) {
+        $carrito = $this->obtenerGuardarCarrito($id_cliente);
+        $producto = $this->productoRepository->findById($id_producto);
+
+
+        if($producto !== NULL) {
+            $detalle = new DetalleCarrito($carrito->getID(),$id_producto,$cantidad);
+            $this->detalleCarritoRepository->save($detalle);
+            $this->inventarioService->actualizarInventario($id_producto,$cantidad);
+        } 
+        
+    }
+
+    public function eliminarProducto(int $id_cliente, int $id_producto) {
+        $carrito = $this->obtenerGuardarCarrito($id_cliente);
+        $detalle = $this->detalleCarritoRepository->findByIdCarritoProducto($carrito->getID(),$id_producto);
+        
+        
+        $this->detalleCarritoRepository->delete($carrito->getID(),$id_producto);
+        $this->inventarioService->devolverInventario($id_producto,$detalle['cantidad']);
+        
+    
+    }
+
+    public function verProductos(int $id_carrito) {
+        $filas = $this->detalleCarritoRepository->findByIdCarrito($id_carrito);
+        return $filas;
+    }
+}
+?>
