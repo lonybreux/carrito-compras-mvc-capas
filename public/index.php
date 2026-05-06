@@ -21,10 +21,6 @@ switch($url) {
         $homeController = new HomeController($conn);
         $homeController->index();
         break;
-    case '/clientes':
-        $clienteController = new ClienteController($conn);
-        $clienteController->index();
-        break;
     case '/auth':
         $authController = new AuthController($conn);
         $authController->index();
