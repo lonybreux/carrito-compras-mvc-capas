@@ -11,7 +11,7 @@ class AuthController {
     }
 
     public function index() {
-        require __DIR__ . '/../views/auth/index.php';
+        require __DIR__ . '/../views/auth/authIndexView.php';
     }
 
     public function registrar() {
