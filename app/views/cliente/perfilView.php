@@ -14,8 +14,5 @@
 </head>
 <body>
     <h1>Bienvenido <?php echo $_SESSION['nombre'] . ' ' . $_SESSION['apellido']?></h1>
-    <form action="/proyecto-SO/public/index.php/perfil/carrito" method="GET">
-        <button type="submit">Ver Carrito</button>
-    </form>
 </body>
 </html>
