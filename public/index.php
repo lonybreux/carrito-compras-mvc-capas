@@ -1,12 +1,19 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 session_start();
-require_once __DIR__ . '/../app/controllers/homeController.php';
-require_once __DIR__ . '/../app/controllers/authController.php';
-require_once __DIR__ . '/../app/controllers/clienteController.php';
-require_once __DIR__ . '/../app/controllers/carritoController.php';
+
+require_once __DIR__ . '/../app/routes/webRouter.php';
 require_once __DIR__ . '/../config/db.php';
 
+//require_once __DIR__ . '/../app/controllers/authController.php';
+//require_once __DIR__ . '/../app/controllers/clienteController.php';
+//require_once __DIR__ . '/../app/controllers/carritoController.php';
+
+
 $conn = ConexionBaseDatos::getInstance();
+$router = new WebRouter();
 
 $urlBase = "/proyecto-SO/public/index.php";
 $url = parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH);
@@ -16,7 +23,9 @@ if($url === '') {
     $url = '/';
 }
 
-switch($url) {
+$router->route($url,$conn);
+
+/*switch($url) {
     case '/':
         $homeController = new HomeController($conn);
         $homeController->index();
@@ -53,5 +62,5 @@ switch($url) {
         http_response_code(404);
         echo 'Página no encontrada';
         break;
-}
+}*/
 ?>
