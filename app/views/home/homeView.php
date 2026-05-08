@@ -58,6 +58,38 @@
                 <img src="assets/img/img-hero.jpg" alt="img hero">
             </div>
         </section>
+
+        <section class="beneficios">
+            <div class="beneficio">
+                <i class="fa-solid fa-truck"></i>
+                <div class="beneficio-text">
+                    <span>Envío gratis</span>
+                    <span>Pedidos > S/80</span>
+                </div>
+            </div>
+            <div class="beneficio">
+                <i class="fa-solid fa-shield"></i>
+                <div class="beneficio-text">
+                    <span>Garantía 2 años</span>
+                    <span>Cobertura total</span>
+                </div>
+            </div>
+            <div class="beneficio">
+                <i class="fa-solid fa-bolt"></i>
+                <div class="beneficio-text">
+                    <span>Pago en 1 clic</span>
+                    <span>Checkout rápido</span>
+                </div>
+            </div>
+            <div class="beneficio">
+                <i class="fa-solid fa-star"></i>
+                <div class="beneficio-text">
+                    <span>Soporte 24/7</span>
+                    <span>Sistema en la nube</span>
+                </div>
+            </div>
+
+        </section>
     </main>
 
 
