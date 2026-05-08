@@ -13,7 +13,7 @@
         <div class="login-card">
             <div class="login-header">
                 <h2>Bienvenido de vuelta</h2>
-                <p>Inicia sesión para continuar en Nova</p>
+                <p>Inicia sesión para continuar en Electro Smart</p>
             </div>
             <form action="/proyecto-SO/public/index.php/profile">
                 <label>Email</label>
