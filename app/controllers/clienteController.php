@@ -9,13 +9,6 @@ class ClienteController {
         $this->conn = $conn;
     }
 
-    public function index() {
-        $clienteService = new ClienteService($this->conn);
-        $filas = $clienteService->obtenerClientes();
-
-        require __DIR__ . '/../views/cliente/clientesView.php';
-    }
-
     public function verPerfil() {
         require __DIR__ . '/../views/cliente/perfilView.php';
     }
