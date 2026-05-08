@@ -15,7 +15,7 @@
                 <h2>Bienvenido de vuelta</h2>
                 <p>Inicia sesión para continuar en Nova</p>
             </div>
-            <form action="">
+            <form action="/proyecto-SO/public/index.php/profile">
                 <label>Email</label>
                 <input type="email" placeholder="tu@email.com" required>
                 <label>Contraseña</label>
