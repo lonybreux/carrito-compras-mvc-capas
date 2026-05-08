@@ -15,7 +15,7 @@ class CarritoController {
         $carrito = $carritoService->obtenerGuardarCarrito($id_cliente);
         $filas = $carritoService->verProductos($carrito->getID());
 
-        require __DIR__ . '/../views/cliente/carritoView.php';
+        require __DIR__ . '/../views/carrito/carritoView.php';
     }
 
     public function agregarProducto() {
