@@ -6,7 +6,8 @@ class WebRouter {
 
     private $routes = [
         '/' => [HomeController::class, 'index'],
-        '/auth/login' => [AuthController::class,'index']
+        '/auth/login' => [AuthController::class,'index'],
+        'auth/register' =>[AuthController::class,'registrar']
     ];
 
     public function route($url,$conn) {
