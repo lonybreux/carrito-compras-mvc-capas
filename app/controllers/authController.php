@@ -37,11 +37,11 @@ class AuthController {
 
     public function iniciarSesion() {
 
-        $flag = FALSE;
+        $_SESSION['flag'] = FALSE;
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $email = $_POST['email'];
-            $contrasena = $_POST['contrasena'];
+            $contrasena = $_POST['password'];
             
             $clienteService = new ClienteService($this->conn);
             $cliente = $clienteService->iniciarSesion($email,$contrasena);
@@ -50,20 +50,14 @@ class AuthController {
                 $_SESSION['id_cliente'] = $cliente->getId();
                 $_SESSION['nombre'] = $cliente->getNombre();
                 $_SESSION['apellido'] = $cliente->getApellido();
-                header('Location: /proyecto-SO/public/index.php/perfil');
+                header('Location: /proyecto-SO/public/index.php/profile');
                 exit();
             }
 
             $_SESSION['flag'] = TRUE;
-            header('Location: /proyecto-SO/public/index.php/auth/iniciar-sesion');
-            exit();   
-            
-
+            require __DIR__ . '/../views/cliente/perfilView.php';
+            return;
         }
-
-        $flag = isset($_SESSION['flag']) ? $_SESSION['flag'] : FALSE;
-        unset($_SESSION['flag']);
-        require __DIR__. '/../views/auth/iniciarSesionView.php';
     }
 }
 ?>

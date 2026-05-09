@@ -13,6 +13,11 @@
     <title>Perfil</title>
 </head>
 <body>
-    <h1>Bienvenido <?php echo $_SESSION['nombre'] . ' ' . $_SESSION['apellido']?></h1>
+    
+    <?php if($_SESSION['flag'] === TRUE): ?>
+        <h1>No se pudo ingresar</h1>
+    <?php else: ?>
+        <h1>Bienvenido <?php echo $_SESSION['nombre'] . ' ' . $_SESSION['apellido']?></h1>
+    <?php endif ?>
 </body>
 </html>
