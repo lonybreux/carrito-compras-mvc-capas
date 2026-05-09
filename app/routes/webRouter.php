@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../controllers/homeController.php';
 require_once __DIR__ . '/../controllers/authController.php';
 require_once __DIR__ . '/../controllers/catalogoController.php';
+require_once __DIR__ . '/../controllers/clienteController.php';
 
 class WebRouter {
 
@@ -9,6 +10,7 @@ class WebRouter {
         '/' => [HomeController::class, 'index'],
         '/auth/login' => [AuthController::class,'index'],
         '/auth/register' => [AuthController::class,'registrar'],
+        '/profile' => [ClienteController::class, 'verPerfil'],
         '/catalogo' => [CatalogoController::class,'index']
     ];
 
