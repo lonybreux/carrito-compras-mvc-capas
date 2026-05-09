@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #fdeee8, #e8e8ed);
+    font-family: "Inter", sans-serif;
+}
+
+.register-container {
+    display: flex;
+    gap: 48px;
+}
+
+.register-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 50%;
+    justify-content: center;
+}
+
+.register-info h1 {
+    font-size: 56px;
+    line-height: 1.2;
+}
+
+.register-info ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.register-info li {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #6d7279;
+    gap: 12px;
+}
+
+.register-info li > i {
+    color: #8d1a1e;
+}
+
+.especial-text {
+    background: linear-gradient(135deg,#8d1a1e, #e05a5a);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    
+}
+
+.etiqueta {
+    display: inline-flex;
+    align-self: flex-start;
+    align-items: center;
+    gap: 6px;
+    background-color: white;
+    color: #8d1a1e;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    animation: pulso 3s ease infinite;
+}
+
+.register-card {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 56px;
+    gap: 24px;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+}
+
+.register-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.register-card label {
+    color: #6d7279;
+    font-size: 13px;
+}
+
+.register-card input {
+    padding: 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+
+.register-card input:focus {
+    border-color: #8d1a1e;
+    box-shadow: 0 8px 40px rgba(141, 26, 30, 0.25);
+}
+
+.register-card button {
+    margin-top: 16px;
+    padding: 12px;
+    background-color: #8d1a1e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bolder;
+    cursor: pointer;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.24);
+    transition: background-color 0.3s ease;
+}
+
+.register-card button:hover {
+    background-color: #6b1215;
+}
+
+
+@keyframes pulso {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.05);}
+    100% {transform: scale(1);}
+}
+

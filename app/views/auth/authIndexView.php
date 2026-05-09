@@ -15,11 +15,11 @@
                 <h2>Bienvenido de vuelta</h2>
                 <p>Inicia sesión para continuar en Electro Smart</p>
             </div>
-            <form action="/proyecto-SO/public/index.php/profile">
+            <form action="/proyecto-SO/public/index.php/profile" method="POST">
                 <label>Email</label>
-                <input type="email" placeholder="tu@email.com" required>
+                <input type="email" name="email" placeholder="tu@email.com" required>
                 <label>Contraseña</label>
-                <input type="password" placeholder="••••••••" required>
+                <input type="password" name="password" placeholder="••••••••" required>
                 <button type="submit">Iniciar sesión</button>
             </form>
             <div class="login-footer">
