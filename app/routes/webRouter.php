@@ -8,6 +8,7 @@ class WebRouter {
 
     private $routes = [
         '/' => [HomeController::class, 'index'],
+        '/auth' => [AuthController::class,'iniciarSesion'],
         '/auth/login' => [AuthController::class,'index'],
         '/auth/register' => [AuthController::class,'registrar'],
         '/profile' => [ClienteController::class, 'verPerfil'],
