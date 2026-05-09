@@ -15,7 +15,7 @@
                 <h2>Bienvenido de vuelta</h2>
                 <p>Inicia sesión para continuar en Electro Smart</p>
             </div>
-            <form action="/proyecto-SO/public/index.php/profile" method="POST">
+            <form action="/proyecto-SO/public/index.php/auth" method="POST">
                 <label>Email</label>
                 <input type="email" name="email" placeholder="tu@email.com" required>
                 <label>Contraseña</label>
@@ -27,6 +27,7 @@
                 <a href="/proyecto-SO/public/index.php/auth/register">Regístrate</a>
             </div>
         </div>
+
     </div>
 
     
