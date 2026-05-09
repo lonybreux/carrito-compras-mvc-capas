@@ -36,11 +36,11 @@
                 <h2>Crea tu cuenta</h2>
                 <p>Solo te tomará unos segundos</p>
             </div>
-            <form action="/proyecto-SO/public/index.php/auth/login" method="POST">
+            <form action="/proyecto-SO/public/index.php/auth/register" method="POST">
                 <label>Nombre</label>
                 <input type="text" name="nombre" placeholder="Tu nombre" required>
                 <label>Apellido</label>
-                <input type="text" name="apellido "placeholder="Tu apellido" required>
+                <input type="text" name="apellido"placeholder="Tu apellido" required>
                 <label>Email</label>
                 <input type="email" name="email" placeholder="tu@email.com" required>
                 <label>Contraseña</label>
