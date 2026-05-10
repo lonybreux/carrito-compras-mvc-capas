@@ -36,6 +36,10 @@ class ClienteController {
         }
     }
 
+    public function pedido() {
+        require __DIR__ . '/../views/cliente/pedidoView.php';
+    }
+
 }
 
 
