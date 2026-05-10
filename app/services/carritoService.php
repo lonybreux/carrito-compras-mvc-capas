@@ -57,5 +57,10 @@ class CarritoService {
         $filas = $this->detalleCarritoRepository->findByIdCarrito($id_carrito);
         return $filas;
     }
+
+    public function obtenerTotal(int $id_carrito) {
+        $total = $this->detalleCarritoRepository->getTotal($id_carrito);
+        return $total;
+    }
 }
 ?>
