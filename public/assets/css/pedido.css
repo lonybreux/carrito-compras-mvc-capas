@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter",sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #fdeee8, #e8e8ed);
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    background-color: #fefbfb;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-logo img{
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    gap: 48px;
+}
+
+header a {
+    text-decoration: none;
+    color: #6d7279;
+    font-size: 15px;
+    
+}
+
+header .cerrar-sesion-btn {
+    display: flex;
+    align-items: center;
+    background-color: #8d1a1e;
+    color: #fefbfb;
+    font-weight: bolder;
+    border-radius: 6px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+header .cerrar-sesion-btn:hover {
+    background-color: #6b1215;
+    color: #fefbfb;
+}
+
+.profile-container {
+    display: flex;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    gap: 16px;
+    padding: 24px;
+}
+
+.perfil-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background-color: white;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.perfil-card h2 {
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.perfil-card p {
+    font-size: 13px;
+    color: #6d7279;
+    margin: 0;
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #8d1a1e;
+    color: white;
+    font-size: 18px;
+    font-weight: bolder;
+
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 16px;
+    padding: 8px;
+    gap: 24px;
+}
+
+.activo-btn {
+    background-color: #8d1a1e;
+    color: white !important;
+}
+
+.sidebar-nav button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 16px;
+    border: none;
+    border-radius: 10px;
+    color: #6d7279;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-nav button:hover:not(.activo-btn){
+    background-color: #f5f5f5;
+    color: black;
+}
+
+.contenido {
+    display: flex;
+    flex: 1;
+    padding: 24px;
+    gap: 24px;
+}
+
+.pedido-form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 24px;
+    padding-top: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 16px;
+    padding: 24px;
+    gap: 16px;
+
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-fila {
+    display: flex;
+    gap: 16px;
+}
+
+.form-fila, .form-group {
+    flex: 1;
+}
+
+.form-card input {
+    padding: 10px 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-card input:focus {
+    border-color: #8d1a1e;
+}
+
+.form-card label {
+    font-size: 13px;
+    color: #6d7279;
+}
+
+.pedido-form button[type="submit"] {
+    padding: 14px;
+    width: fit-content;
+    background-color: #8d1a1e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pedido-form button[type="submit"]:hover {
+    background-color: #6b1215;
+}
+
+.metodo-tabs {
+    display: flex;
+    gap: 12px;
+}
+
+.metodo-tab {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    font-size: 14px;
+    color: #6d7279;
+}
+
+.metodo-activo {
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+.pedido-form h1 {
+    font-size: 36px;
+    font-weight: bolder;
+    color: black;
+}
+
+.pedido-form p {
+    font-size: 14px;
+    color: #6d7279;
+}
+
+.etiqueta {
+    font-size: 13px;
+    color: #6d7279;
+}
+
+.form-card h3 {
+    font-size: 16px;
+    font-weight: bolder;
+    color: black;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e5e5e5;
+}
