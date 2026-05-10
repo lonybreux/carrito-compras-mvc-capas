@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/pedido.css">
+    <script defer src="../assets/scripts/pedido.js"> </script>
     <title>Pedido</title>
 </head>
 <body>
@@ -55,43 +56,44 @@
                     <h3>Dirección de envío</h3>
                     <div class="form-group">
                         <label>Dirección</label>
-                        <input type="text" name="direccion" placeholder="Calle, número, piso">
+                        <input type="text" name="direccion" placeholder="Calle, número, piso" required>
                     </div>   
                 </div>
 
                 <div class="form-card">
                     <h3><i class="fa-solid fa-credit-card"></i> Método de pago</h3>
 
+                    <input type="hidden" name="metodo_pago" id="metodo-seleccionado" value="tarjeta">
                     <div class="metodo-tabs">
-                        <button type="button" class="metodo-tab metodo-activo">Tarjeta de crédito</button>
-                        <button type="button" class="metodo-tab">PayPal</button>
-                        <button type="button" class="metodo-tab">Transferencia</button>
+                        <button type="button" class="metodo-tab metodo-activo" data-metodo="tarjeta">Tarjeta de crédito</button>
+                        <button type="button" class="metodo-tab" data-metodo="paypal">PayPal</button>
+                        <button type="button" class="metodo-tab" data-metodo="transferencia">Transferencia</button>
                     </div>
 
                     <div class="form-group">
                         <label>Número de tarjeta</label>
-                        <input type="text" name="numero_tarjeta" placeholder="1234 5678 9012 3456">
+                        <input type="text" name="numero_tarjeta" placeholder="1234 5678 9012 3456" required>
                     </div>
 
                     <div class="form-fila">
                         <div class="form-group">
                             <label>Titular</label>
-                            <input type="text" name="titular" placeholder="Como aparece en la tarjeta">
+                            <input type="text" name="titular" placeholder="Como aparece en la tarjeta" required>
                         </div>
                         <div class="form-group">
                             <label>Caducidad</label>
-                            <input type="text" name="caducidad" placeholder="MM / AA">
+                            <input type="text" name="caducidad" placeholder="MM / AA" required>
                         </div>
                     </div>
 
                     <div class="form-fila">
                         <div class="form-group">
                             <label>CVV</label>
-                            <input type="text" name="cvv" placeholder="123">
+                            <input type="text" name="cvv" placeholder="123" required>
                         </div>
                         <div class="form-group">
                             <label>Código postal de facturación</label>
-                            <input type="text" name="codigo_facturacion" placeholder="28001">
+                            <input type="text" name="codigo_facturacion" placeholder="28001" required>
                         </div>
                     </div>
                 </div>
