@@ -21,7 +21,6 @@
         <nav>
             <ul>
                 <li><a href="/proyecto-SO/public/index.php/catalogo">Catálogo</a></li>
-                <li><a href="/proyecto-SO/public/index.php/destacados">Destacados</a></li>
             </ul>
         </nav>
         <div> 
