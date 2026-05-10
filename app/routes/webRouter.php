@@ -12,7 +12,8 @@ class WebRouter {
         '/auth/login' => [AuthController::class,'index'],
         '/auth/register' => [AuthController::class,'registrar'],
         '/profile' => [ClienteController::class, 'verPerfil'],
-        '/catalogo' => [CatalogoController::class,'index']
+        '/profile/actualizar' =>[ClienteController::class, 'actualizar'],
+        '/catalogo' => [CatalogoController::class,'index']   
     ];
 
     public function route($url,$conn) {
