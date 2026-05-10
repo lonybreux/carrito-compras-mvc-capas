@@ -3,6 +3,7 @@ require_once __DIR__ . '/../controllers/homeController.php';
 require_once __DIR__ . '/../controllers/authController.php';
 require_once __DIR__ . '/../controllers/catalogoController.php';
 require_once __DIR__ . '/../controllers/clienteController.php';
+require_once __DIR__ . '/../controllers/pedidoController.php';
 
 class WebRouter {
 
@@ -14,7 +15,9 @@ class WebRouter {
         '/profile' => [ClienteController::class, 'verPerfil'],
         '/profile/actualizar' =>[ClienteController::class, 'actualizar'],
         '/catalogo' => [CatalogoController::class,'index'],
-        '/pedido' => [ClienteController::class, 'pedido']
+        '/pedido' => [ClienteController::class, 'pedido'],
+        '/pedido/confirmar' => [PedidoController::class,'registrarPedido'],
+        '/pedido/exito' => [PedidoController::class,'']
     ];
 
     public function route($url,$conn) {
