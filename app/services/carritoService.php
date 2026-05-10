@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../repositories/carritoRepository.php';
 require_once __DIR__ . '/../repositories/detalleCarritoRepository.php';
 require_once __DIR__ . '/../repositories/productoRepository.php';
+require_once __DIR__ . '/../repositories/pedidoRepository.php';
 require_once __DIR__ . '/../services/inventarioService.php';
 
 class CarritoService {
@@ -9,12 +10,14 @@ class CarritoService {
     private $detalleCarritoRepository;
     private $productoRepository;
     private $inventarioService;
+    private $pedidoRepository;
 
     public function __construct($conn) {
         $this->carritoRepository = new CarritoRepository($conn);
         $this->detalleCarritoRepository = new DetalleCarritoRepository($conn);
         $this->productoRepository = new ProductoRepository($conn);
         $this->inventarioService = new InventarioService($conn);
+        $this->pedidoRepository = new PedidoRepository($conn);
     }
 
     public function obtenerGuardarCarrito(int $id_cliente) {
@@ -61,6 +64,10 @@ class CarritoService {
     public function obtenerTotal(int $id_carrito) {
         $total = $this->detalleCarritoRepository->getTotal($id_carrito);
         return $total;
+    }
+
+    public function registrarPedido($total, $id_cliente) {
+        $this->pedidoRepository->save($total,$id_cliente);
     }
 }
 ?>
