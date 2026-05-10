@@ -89,7 +89,7 @@
                             <span>Total</span>
                             <span><?= $total ?></span>
                         </div>
-                        <button type="button">Finalizar compra</button>
+                        <a href="/proyecto-SO/public/index.php/pedido" class="btn-finalizar">Finalizar compra</a>
                     </div>
 
                 </section>

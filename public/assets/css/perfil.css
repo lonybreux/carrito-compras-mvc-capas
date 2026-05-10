@@ -218,6 +218,22 @@ header .cerrar-sesion-btn:hover {
     transition: background-color 0.3s ease;
 }
 
+.btn-finalizar {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 14px;
+    background-color: #8d1a1e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
 .resumen-col button:hover {
     background-color: #6b1215;
 }
