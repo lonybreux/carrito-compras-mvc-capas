@@ -18,6 +18,19 @@ class PedidoRepository {
         $stmt->execute();
         $stmt->close();
     }
+
+    public function findByIdCliente($id_cliente) {
+        $stmt = $this->conn->prepare('SELECT * FROM pedido WHERE id_cliente=?');
+        $stmt->bind_param('i',$id_cliente);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+
+        $fila = $result->fetch_assoc();
+        $stmt->close();
+
+        return $fila;
+    }
 }
 
 
