@@ -46,7 +46,6 @@
                 <nav class="sidebar-nav">
                     <button class="nav-btn activo-btn"><i class="fa-solid fa-cart-shopping"></i> Carrito</button>
                     <button class="nav-btn"><i class="fa-solid fa-box"></i> Pedidos</button>
-                    <button class="nav-btn"><i class="fa-solid fa-credit-card"></i> Pagos</button>
                 </nav>
             </aside>
 
