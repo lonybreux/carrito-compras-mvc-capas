@@ -17,7 +17,7 @@ class DetalleCarritoRepository {
     }
 
     public function findByIdCarrito(int $id_carrito) {
-        $stmt = $this->conn->prepare('SELECT p.id_producto, p.nombre, p.precio, dc.cantidad
+        $stmt = $this->conn->prepare('SELECT p.id_producto, p.nombre, p.precio, p.imagen, dc.cantidad
         FROM detalle_carrito dc
         INNER JOIN producto p ON dc.id_producto = p.id_producto
         WHERE dc.id_carrito=?
@@ -59,6 +59,30 @@ class DetalleCarritoRepository {
         $stmt->bind_param('ii',$id_carrito,$id_producto);
         $stmt->execute();
         $stmt->close();
+    }
+
+    public function deleteAll($id_carrito) {
+        $stmt = $this->conn->prepare('DELETE FROM detalle_carrito where id_carrito = ?');
+        $stmt->bind_param('i',$id_carrito);
+        $stmt->execute();
+        $stmt->close();
+    }
+
+    public function getTotal(int $id_carrito) {
+        $stmt = $this->conn->prepare('SELECT SUM(p.precio * dc.cantidad) AS total 
+        FROM detalle_carrito dc 
+        INNER JOIN producto p ON dc.id_producto = p.id_producto 
+        WHERE dc.id_carrito = ?');
+
+        $stmt->bind_param('i',$id_carrito);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+        $total = $result->fetch_assoc();
+
+        $stmt->close();
+
+        return $total['total'];
     }
 }
 

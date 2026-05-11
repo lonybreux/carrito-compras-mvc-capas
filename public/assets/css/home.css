@@ -27,8 +27,6 @@ header {
     box-shadow: none;
 }
 
-
-
 ul {
     display: flex;
     list-style: none;
@@ -65,7 +63,7 @@ button:hover {
     display: flex;
     align-items: center;
     padding: 60px 60px;
-    background: linear-gradient(190deg,#fdeee8, #fefbfb);
+    background: linear-gradient(180deg,#fdeee8,  #f8f8fa);
 }
 
 .hero-content {
@@ -133,9 +131,9 @@ button:hover {
     display: flex;
     justify-content: space-between;
     padding: 20px 80px;
-    border-bottom: 1px solid #e5e5e5;
-    border-top: 1px solid #e5e5e5;
-    background-color: #f5f5f5;
+    border-bottom: 2px solid #e5e5e5;
+    border-top: 2px solid #e5e5e5;
+    background-color: #f8f8fa;
     margin: 0;
 }
 
@@ -165,7 +163,7 @@ button:hover {
     font-size: 20px;
     padding: 10px;
     border-radius: 9px;
-    background-color: #fefbfb;
+    background-color: #f8f8fa;
     border: 1px solid #e5e5e5;
 }
 
@@ -179,7 +177,7 @@ button:hover {
 footer {
     display: flex;
     flex-direction: column;
-    background-color: #fefbfb;
+    background-color:  #f8f8fa;
 }
 
 .footer-main{
