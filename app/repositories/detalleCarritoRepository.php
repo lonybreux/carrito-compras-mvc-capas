@@ -61,6 +61,13 @@ class DetalleCarritoRepository {
         $stmt->close();
     }
 
+    public function deleteAll($id_carrito) {
+        $stmt = $this->conn->prepare('DELETE FROM detalle_carrito where id_carrito = ?');
+        $stmt->bind_param('i',$id_carrito);
+        $stmt->execute();
+        $stmt->close();
+    }
+
     public function getTotal(int $id_carrito) {
         $stmt = $this->conn->prepare('SELECT SUM(p.precio * dc.cantidad) AS total 
         FROM detalle_carrito dc 

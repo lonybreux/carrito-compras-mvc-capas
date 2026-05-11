@@ -63,6 +63,8 @@ class CarritoService {
     
     }
 
+
+
     public function verProductos(int $id_carrito) {
         $filas = $this->detalleCarritoRepository->findByIdCarrito($id_carrito);
         return $filas;
@@ -87,6 +89,10 @@ class CarritoService {
 
     public function obtenerPedido($id_cliente) {
         return $this->pedidoRepository->findByIdCliente($id_cliente);
+    }
+
+    public function eliminarProductosCarrito($id_carrito) {
+        $this->detalleCarritoRepository->deleteAll($id_carrito);
     }
 }
 ?>
