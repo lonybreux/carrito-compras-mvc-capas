@@ -62,43 +62,45 @@
 
                 <div class="form-card">
                     <h3><i class="fa-solid fa-credit-card"></i> Método de pago</h3>
-
-                    <input type="hidden" name="metodo_pago" id="metodo-seleccionado" value="tarjeta">
-                    <div class="metodo-tabs">
-                        <button type="button" class="metodo-tab metodo-activo" data-metodo="tarjeta">Tarjeta de crédito</button>
-                        <button type="button" class="metodo-tab" data-metodo="paypal">PayPal</button>
-                        <button type="button" class="metodo-tab" data-metodo="transferencia">Transferencia</button>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Número de tarjeta</label>
-                        <input type="text" name="numero_tarjeta" placeholder="1234 5678 9012 3456" required>
-                    </div>
-
-                    <div class="form-fila">
-                        <div class="form-group">
-                            <label>Titular</label>
-                            <input type="text" name="titular" placeholder="Como aparece en la tarjeta" required>
+                        <input type="hidden" name="metodo_pago" id="metodo-seleccionado" value="tarjeta">
+                        <div class="metodo-tabs">
+                            <button type="button" class="metodo-tab metodo-activo" data-metodo="tarjeta">Tarjeta de crédito</button>
+                            <button type="button" class="metodo-tab" data-metodo="paypal">PayPal</button>
+                            <button type="button" class="metodo-tab" data-metodo="transferencia">Transferencia</button>
                         </div>
-                        <div class="form-group">
-                            <label>Caducidad</label>
-                            <input type="text" name="caducidad" placeholder="MM / AA" required>
-                        </div>
-                    </div>
 
-                    <div class="form-fila">
-                        <div class="form-group">
-                            <label>CVV</label>
-                            <input type="text" name="cvv" placeholder="123" required>
+                        <div id="form-tarjeta">
+                            <div class="form-group">
+                                <label>Número de tarjeta</label>
+                                <input type="text" name="numero_tarjeta" placeholder="1234 5678 9012 3456" value="0000 0000 0000 0000" required>
+                            </div>
+
+                            <div class="form-fila">
+                                <div class="form-group">
+                                    <label>Titular</label>
+                                    <input type="text" name="titular" placeholder="Como aparece en la tarjeta" value="mmmm" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Caducidad</label>
+                                    <input type="text" name="caducidad" placeholder="MM / AA" value="MM / AA" required>
+                                </div>
+                            </div>
+
+                            <div class="form-fila">
+                                <div class="form-group">
+                                    <label>CVV</label>
+                                    <input type="text" name="cvv" placeholder="123" value="123" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Código postal de facturación</label>
+                                    <input type="text" name="codigo_facturacion" placeholder="28001" value="28001" required>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>Código postal de facturación</label>
-                            <input type="text" name="codigo_facturacion" placeholder="28001" required>
-                        </div>
-                    </div>
+                        <button type="submit">Confirmar pedido</button>
                 </div>
-
-                <button type="submit">Confirmar pedido</button>
+                    
+                
             </form>
                 
             </div>
