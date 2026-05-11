@@ -17,7 +17,7 @@ class WebRouter {
         '/catalogo' => [CatalogoController::class,'index'],
         '/pedido' => [ClienteController::class, 'pedido'],
         '/pedido/confirmar' => [PedidoController::class,'registrarPedido'],
-        '/pedido/exito' => [PedidoController::class,'']
+        '/pedido/exito' => [PedidoController::class,'exitoView']
     ];
 
     public function route($url,$conn) {

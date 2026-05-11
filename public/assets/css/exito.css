@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter",sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #fdeee8, #e8e8ed);
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    background-color: #fefbfb;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-logo img{
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    gap: 48px;
+}
+
+header a {
+    text-decoration: none;
+    color: #6d7279;
+    font-size: 15px;
+    
+}
+
+header .cerrar-sesion-btn {
+    display: flex;
+    align-items: center;
+    background-color: #8d1a1e;
+    color: #fefbfb;
+    font-weight: bolder;
+    border-radius: 6px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+header .cerrar-sesion-btn:hover {
+    background-color: #6b1215;
+    color: #fefbfb;
+}
+
+.exito-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 80px)
+}
+
+.exito-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border-radius: 24px;
+    padding: 48px;
+    width: 560px;
+
+}
+
+.icono-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 32px;
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, #6b1215, #8d1a1e );
+    border-radius: 50%;
+}
+
+.etiqueta-exito {
+    font-size: 12px;
+    color: #6d7279;
+    letter-spacing: 1px;
+}
+
+.exito-card h1 {
+    font-size: 32px;
+    font-weight: bolder;
+}
+
+.exito-card p {
+    font-size: 14px;
+    color: #6d7279;
+}
+
+.info-exito {
+    display: flex;
+    gap: 12px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 1px solid #e5e5e5;
+    border-radius: 999px;
+    font-size: 13px;
+    color: #6d7279;
+}
+
+.btn-secundario {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secundario:hover {
+    background-color: #f5f5f5;
+}

@@ -172,7 +172,7 @@ header .cerrar-sesion-btn:hover {
     display: flex;
     flex-direction: column;
     width: 280px;
-    height: 60%;
+    height: fit-content;
     gap: 16px;
     background-color: #f8f8fa;
     border-radius: 12px;

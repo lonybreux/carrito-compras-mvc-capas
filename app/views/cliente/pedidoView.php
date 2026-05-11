@@ -51,7 +51,7 @@
                 <h1>Confirma tu pedido</h1>
                 <p>Completa tus datos para enviarte información.</p>
 
-            <form action="/proyecto-SO/public/index.php/pedido/confirmar">
+            <form action="/proyecto-SO/public/index.php/pedido/confirmar" method='POST'>
                 <div class="form-card">
                     <h3>Dirección de envío</h3>
                     <div class="form-group">
