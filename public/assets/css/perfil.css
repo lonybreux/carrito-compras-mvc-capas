@@ -404,6 +404,7 @@ header .cerrar-sesion-btn:hover {
     padding: 12px;
     border: 1px solid #e5e5e5;
     border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .seccion-actualizar form {
@@ -442,4 +443,14 @@ header .cerrar-sesion-btn:hover {
     padding: 2px 8px;
     border-radius: 999px;
     width: fit-content;
+}
+
+.producto-stock {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
 }

@@ -18,11 +18,6 @@
             </a>
         </div>
         
-        <nav>
-            <ul>
-                <li><a href="/proyecto-SO/public/index.php/catalogo">Catálogo</a></li>
-            </ul>
-        </nav>
         <div> 
             <a class="cerrar-sesion-btn" href="/proyecto-SO/public/index.php"><i class="fa-solid fa-arrow-left"></i>Cerrar sesión</a>
         </div>
@@ -67,9 +62,15 @@
                                     <div class="producto-cantidad">
                                         <span class="cantidad-producto"><?= $producto['cantidad'] ?></span>
                                     </div>
-                                    <button type="button" class="btn-eliminar">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button>
+                                    <form action="/proyecto-SO/public/index.php/profile/actualizar" method="POST">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <input type="hidden" name="id_producto" value="<?= $producto['id_producto'] ?>">
+
+                                        <button type="submit" class="btn-eliminar">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </form>
+                                    
                                 </div>
                             <?php endforeach ?>
                         </div>
@@ -98,19 +99,22 @@
                     <div class="productos-disponibles">
                         <h2>Productos que puede agregar</h2>
                         <?php foreach($todosProductos as $producto): ?>
-                            <div class="producto-disponible">
-                                <div class="producto-imagen">
+                            <?php if($producto['estado'] === 'disponible'): ?>
+                                <div class="producto-disponible">
+                                    <div class="producto-imagen">
                                         <img src="../assets/img/<?= ($producto['imagen']) ?>" alt="producto">
                                     </div>
                                     <div class="producto-info">
                                         <span class="id-etiqueta"><?= $producto['id_producto'] ?></span>
                                         <span class="producto-nombre"><?= $producto['nombre']?></span>
                                         <span class="producto-precio">S/ <?= $producto['precio']?></span>
+                                        <span class="producto-stock"> Quedan: <?php echo $producto['stock_actual'] ?></span>
                                     </div>
-                            </div>
+                                </div>
+                            <?php endif ?>
                         <?php endforeach ?>
                     </div>
-                    <form action="proyecto-SO/public/index.php/profile/actualizar" method="POST">
+                    <form action="/proyecto-SO/public/index.php/profile/actualizar" method="POST">
                         <h3>Agregar producto</h3>
                         <label>ID del producto</label>
                         <input type="number" name="id" min="1" max="13" required>
