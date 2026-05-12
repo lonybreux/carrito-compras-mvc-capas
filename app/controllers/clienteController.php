@@ -18,22 +18,34 @@ class ClienteController {
 
     public function verPerfil() {
         $carrito = $this->carritoService->obtenerGuardarCarrito($_SESSION['id_cliente']);
-        $productos = $this->carritoService->verProductos($carrito->getId());
-        $total = $this->carritoService->obtenerTotal($carrito->getId());
+        $productos = $this->carritoService->verProductos($carrito->getID());
+        $total = $this->carritoService->obtenerTotal($carrito->getID());
         $todosProductos = $this->productoService->obtenerProductos();
         require __DIR__ . '/../views/cliente/perfilView.php';
     }
 
     public function actualizar() {
-        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        if($_SERVER['REQUEST_METHOD'] !== 'POST') return;
+
+        $method = $_POST['_method'] ?? 'POST';
+
+        if($method === 'DELETE') {
+            $id_producto = intval($_POST['id_producto']);
+
+            $this->carritoService->eliminarProducto($_SESSION['id_cliente'],$id_producto);
+
+            
+        } else {
             $id = $_POST['id'];
             $cantidad = $_POST['cantidad'];
 
             $this->carritoService->agregarProducto($_SESSION['id_cliente'],$id,$cantidad);
-
-            header('Location: /proyecto-SO/public/index.php/profile');
-            exit();
         }
+
+        header('Location: /proyecto-SO/public/index.php/profile');
+        exit();
+       
     }
 
     public function pedido() {

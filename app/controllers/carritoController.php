@@ -40,7 +40,7 @@ class CarritoController {
         $carritoService = new CarritoService($this->conn);
         $carritoService->eliminarProducto($id_cliente,$id_producto);
 
-        header('Location: /proyecto-SO/public/index.php/perfil/carrito');
+        header('Location: /proyecto-SO/public/index.php/profile');
         exit();
     }
 }
