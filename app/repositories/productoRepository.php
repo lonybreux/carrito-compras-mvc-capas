@@ -22,8 +22,9 @@ class ProductoRepository {
     }
 
     public function findAll() {
-        $result = $this->conn->query('SELECT p.id_producto, p.nombre, p.precio, p.estado,p.imagen, m.nombre AS marca, c.nombre AS categoria
+        $result = $this->conn->query('SELECT p.id_producto, p.nombre, p.precio, p.estado,p.imagen, i.stock_actual, m.nombre AS marca, c.nombre AS categoria
         FROM producto p
+        INNER JOIN inventario i ON p.id_producto = i.id_producto
         INNER JOIN marca m ON p.id_marca = m.id_marca
         INNER JOIN categoria c ON p.id_categoria = c.id_categoria
         ORDER BY p.id_producto');

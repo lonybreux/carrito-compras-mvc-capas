@@ -55,8 +55,6 @@ class CarritoService {
     public function eliminarProducto(int $id_cliente, int $id_producto) {
         $carrito = $this->obtenerGuardarCarrito($id_cliente);
         $detalle = $this->detalleCarritoRepository->findByIdCarritoProducto($carrito->getID(),$id_producto);
-        
-        
         $this->detalleCarritoRepository->delete($carrito->getID(),$id_producto);
         $this->inventarioService->devolverInventario($id_producto,$detalle['cantidad']);
         

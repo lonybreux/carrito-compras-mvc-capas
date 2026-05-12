@@ -41,8 +41,6 @@ class DetalleCarritoRepository {
 
     public function findByIdCarritoProducto(int $id_carrito, int $id_producto) {
         $stmt = $this->conn->prepare('SELECT * from detalle_carrito WHERE id_carrito = ? AND id_producto = ?');
-        var_dump($id_carrito); // ← ¿llegan correctos?
-        var_dump($id_producto);
         $stmt->bind_param('ii',$id_carrito,$id_producto);
         $stmt->execute();
 
